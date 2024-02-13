@@ -7,6 +7,10 @@
     {
       "id": "2",
       "title": "Trabalho"
+    },
+    {
+      "id": "a753",
+      "title": "       Teste"
     }
   ],
   "tasks": [
@@ -18,17 +22,24 @@
     {
       "title": " Comprar Açai",
       "listId": "1",
-      "id": "da49"
+      "id": "da49",
+      "status": "1"
     },
     {
       "id": "cd56",
       "title": "Comprar café",
-      "listId": "1"
+      "listId": "1",
+      "status": "0"
     },
     {
-      "title": "Comprar Abacate",
+      "title": "Comprar Abacateee",
       "listId": "1",
       "id": "9043"
+    },
+    {
+      "id": "89bf",
+      "title": "item teste",
+      "listId": "a753"
     }
   ]
 }

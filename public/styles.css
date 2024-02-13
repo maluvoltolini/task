@@ -24,8 +24,13 @@
     background-color: #FFFFE4;
 }
 
-.edit-task {
+.trash-task {
     margin-right: 5px;
+    margin-left: 5px;
+}
+
+.btn-warning {
+    color: white;
 }
 
 .list-btn {

@@ -6,11 +6,11 @@ function getAllLists() {
     $.ajax({
         url: `${API_URL}/lists`,
         method: 'GET',
-        success: function(lists) {
+        success: function (lists) {
             renderLists(lists);
             if (lists.length > 0) {
                 const firstListId = lists[0].id;
-                getTasksAndRender(firstListId); 
+                getTasksAndRender(firstListId);
             }
         },
         error: handleAjaxError('Erro ao obter listas.')
@@ -26,6 +26,33 @@ async function getTasksByList(listId) {
         return response;
     } catch (error) {
         console.error('Erro ao obter tarefas.', error);
+        throw error;
+    }
+}
+
+async function getTaskDetails(taskId) {
+    try {
+        const response = await $.ajax({
+            url: `${API_URL}/tasks/${taskId}`,
+            method: 'GET'
+        });
+        return response;
+    } catch (error) {
+        throw error;
+    }
+}
+
+async function updateTask(taskDetails) {
+    try {
+        await $.ajax({
+            url: `${API_URL}/tasks/${taskDetails.id}`,
+            method: 'PUT',
+            contentType: 'application/json',
+            data: JSON.stringify(taskDetails),
+            success: () => console.log('Tarefa atualizada com sucesso.'),
+            error: handleAjaxError('Erro ao atualizar a tarefa.')
+        });
+    } catch (error) {
         throw error;
     }
 }
@@ -86,9 +113,9 @@ function handleAjaxError(errorMessage) {
 async function getTasksAndRender(listId) {
     try {
         const tasks = await getTasksByList(listId);
-        $('#list-btn-' + listId).css('background-color', '#a49f9f');
+        $('#list-btn-' + listId).css('background-color', 'rgb(84 84 84)');
         $('#listId').val(listId);
-        renderTasks(tasks); 
+        renderTasks(tasks);
     } catch (error) {
         console.error('Erro ao obter tarefas.', error);
         throw error;
@@ -105,7 +132,7 @@ $(document).on('click', '.list-btn', async function () {
     const tasks = await getTasksByList(listId);
     $('#listId').val(listId);
     $('.list-btn').css('background-color', '');
-    $(this).css('background-color', '#a49f9f');
+    $(this).css('background-color', 'rgb(84 84 84)');
     renderTasks(tasks);
 });
 
@@ -155,6 +182,7 @@ $('#addTaskForm').submit(function (event) {
         const newTaskListId = $('#listId').val();
         addTask(newTaskTitle, newTaskListId);
         $('#addTaskModal').modal('hide');
+        $('#newTaskTitle').val('');
     } else {
         alert('Por favor, insira um título para a nova tarefa.');
     }
@@ -172,8 +200,31 @@ $('#addListForm').submit(function (event) {
     if (newListTitle.trim() !== '') {
         addList(newListTitle);
         $('#addListModal').modal('hide');
+        $('#newListTitle').val('');
     } else {
         alert('Por favor, insira um título para a nova lista.');
     }
+});
+
+$(document).on('click', ".status-task", async function () {
+    const taskId = $(this).attr('data-id');
+    const taskStatus = $(this).attr('data-status');
+    const listId = $('#listId').val();
+    try {
+        const taskDetails = await getTaskDetails(taskId);
+        taskDetails.status = taskStatus;
+        await updateTask(taskDetails);
+        const tasks = await getTasksByList(listId);
+        renderTasks(tasks);
+    } catch (error) {
+        console.error('Erro ao atualizar o status da tarefa.', error);
+    }
+});
+
+$(document).on('focusout', "#newTaskTitle, #newListTitle, #taskTitle", function () {
+    let value = $(this).val();
+    const newValue = value.trim();
+    
+   $(this).val(newValue);
 });
 
