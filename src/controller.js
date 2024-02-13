@@ -49,7 +49,6 @@ async function updateTask(taskDetails) {
             method: 'PUT',
             contentType: 'application/json',
             data: JSON.stringify(taskDetails),
-            success: () => console.log('Tarefa atualizada com sucesso.'),
             error: handleAjaxError('Erro ao atualizar a tarefa.')
         });
     } catch (error) {
@@ -63,7 +62,6 @@ function updateTaskTitle(taskId, newTitle, listId) {
         method: 'PUT',
         contentType: 'application/json',
         data: JSON.stringify({ title: newTitle, listId }),
-        success: getAllLists,
         error: handleAjaxError('Erro ao atualizar o título da tarefa.')
     });
 }
