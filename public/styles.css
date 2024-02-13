@@ -1,4 +1,62 @@
-/* Your code */
-.tl-title {
-    text-decoration: black underline;
+
+.text-title-1 {
+    font-size: 60px;
+    font-weight: bold;
+    font-family: ui-sans-serif;
+    color: #737373;
 }
+
+.text-title-2 {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: ui-sans-serif;
+    color: #737373;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-wrapper {
+    height: 100vh;
+    background-color: #FFFFE4;
+}
+
+.edit-task {
+    margin-right: 5px;
+}
+
+.list-btn {
+    background-color: #737373;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    width: 100%;
+}
+
+#add-task-button{
+    float:right;
+}
+
+.btn-add-list {
+    float: right;
+    margin-right: 5px;
+}
+
+table {
+    width: 100%;
+}
+
+th, td {
+    text-align: center;
+}
+
+th {
+    background-color: #7CA4CE;
+    color: white;
+}
+
+
+
