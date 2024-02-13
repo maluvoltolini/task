@@ -1,30 +1,23 @@
-# Desafio Front-end - tasks-list-starter
+# Task List
+- Essa aplicação tem como objetivo organizar a rotina dos usuários, sendo possível, criar tarefas e  editá-las, remover e alterar seu status.
 
-### O desafio
-Você tem várias tarefas diárias e não tem um aplicativo que te ajude a controlar o  andamento delas. Para isso, resolveu criar um aplicativo de Lista de tarefas.
-Esse aplicativo deve ter a possibilidade de criar listas e dentro delas adicionar tarefas.  Deve ser possível editá-las, remover e alterar o status da tarefa, como concluir uma  tarefa, por exemplo.
+# Tecnologias
+- JSON Server
+- JQuery
+- Javascript
+- Bootstrap
 
-### Requisitos
-* Utilizar JSON Server como um fake REST API.
-* Utilizar Javascript com jQuery.
-* Utilizar o Bootstrap como folha de estilo base.
+# Instalação 
+- Clone o projeto a partir deste respositório.
+- No terminal (pasta do projeto), execute os seguintes comandos:
+```
+npm i
+```
 
-### Como começar?
-* Crie o seu projeto a partir do https://github.com/jhonnytuba/tasks-list-starter/.
-  * Antes de tudo, use `npm i` para instalar as dependências.
-  * Para subir o servidor em modo de desenvolvimento, use `npm run dev` e então acesse `http://127.0.0.1:8082/`.
-* Instale globalmente o JSON Server.
-* Copie o arquivo db.json existente no outro arquivo anexo para seu projeto.
-* Rode seu fake REST API com este comando json-server --delay 500 db.json.
-  * Este comando criará um delay de 500ms nas chamadas, com isso, é possível simular uma aplicação real.
-* db.json:
-`{ "lists": [{ "id": 1, "title": "Mercado" },{ "id": 2, "title": "Trabalho" }], 
-"tasks": [{ "id": 1, "listId": 1, "title": "Comprar arroz" },
-{ "id": 2, "listId": 1, "title": "Comprar feijão" },
-{ "id": 3, "listId": 2, "title": "Reunião às 10:00" }] }`
-* Seu fake REST API estará disponível na porta http://localhost:3000
+# Para executar o projeto utilize os comandos abaixo:
+```
+npm run dev
+json-server db.json --port 3000
+```
 
-### Estrutura dos arquivos
-No diretório public estão os arquivos `index.html` e `styles.css` e no diretório src está o arquivo `main.js`.
 
-Após isso é só codar!
