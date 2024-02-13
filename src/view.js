@@ -3,7 +3,7 @@ export function renderLists(lists) {
     listsContainer.empty();
     lists.forEach(list => {
         listsContainer.append(`<div class="col-md-3 mt-2">
-                                    <button class="btn list-btn" id="list-btn-${list.id}" data-id=${list.id}>${list.title}</button>
+                                    <button class="btn btn-secondary list-btn" id="list-btn-${list.id}" data-id=${list.id}>${list.title}</button>
                              </div>`);
     });
 }
