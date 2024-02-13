@@ -7,42 +7,18 @@
     {
       "id": "2",
       "title": "Trabalho"
-    },
-    {
-      "id": "37d9",
-      "title": "Academia"
     }
   ],
   "tasks": [
     {
-      "id": "3",
-      "listId": 2,
-      "title": "Reunião às 10:00"
+      "title": "Reunião às 10:30",
+      "listId": "2",
+      "id": "3"
     },
     {
-      "title": "Comprar Caju",
+      "title": "Comprar Abacate",
       "listId": "1",
-      "id": "da49"
-    },
-    {
-      "id": "5e9b",
-      "title": "Comprar sagu",
-      "listId": "1"
-    },
-    {
-      "id": "cd56",
-      "title": "Comprar café",
-      "listId": "1"
-    },
-    {
-      "id": "9043",
-      "title": "Comprar Jacare",
-      "listId": "1"
-    },
-    {
-      "id": "86b2",
-      "title": "Ir na academia",
-      "listId": "37d9"
+      "id": "9043"
     }
   ]
 }

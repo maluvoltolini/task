@@ -20,19 +20,23 @@
 }
 
 .content-wrapper {
-    height: 100vh;
+    min-height: 100vh;
     background-color: #FFFFE4;
 }
 
-.edit-task {
+.trash-task {
     margin-right: 5px;
+    margin-left: 5px;
+}
+
+.btn-warning {
+    color: white;
 }
 
 .list-btn {
-    background-color: #737373;
+    /* background-color: #737373; */
     color: white;
     font-weight: bold;
-    border-radius: 20px;
     width: 100%;
 }
 
